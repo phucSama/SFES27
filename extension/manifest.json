@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "PHẢN ỨNG. — Phòng Thí Nghiệm Ảo",
+  "version": "1.2.0",
+  "description": "Bôi đen tên nguyên tố, công thức phản ứng, thuật ngữ Vật lý/Sinh học, hoặc phương trình mặt phẳng/mặt cầu/đường thẳng trong Oxyz trên bất kỳ trang web nào để xem mô hình 3D tương tác ngay lập tức. Bấm icon để mở phòng thí nghiệm đầy đủ.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Mở phòng thí nghiệm ảo",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [],
+  "host_permissions": []
+}
